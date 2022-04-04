@@ -2,6 +2,8 @@ package gregicality.science.common;
 
 import gregicality.science.GregicalityScience;
 import gregicality.science.common.block.GCYSMetaBlocks;
+import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
+import gregicality.science.common.pipelike.pressure.ItemBlockPressurePipe;
 import gregicality.science.loaders.recipe.GCYSMaterialInfoLoader;
 import gregicality.science.loaders.recipe.GCYSRecipeLoader;
 import gregtech.common.blocks.VariantItemBlock;
@@ -24,10 +26,6 @@ import java.util.function.Function;
 @Mod.EventBusSubscriber(modid = GregicalityScience.MODID)
 public class CommonProxy {
 
-    public void preLoad() {
-
-    }
-
     @SubscribeEvent
     public static void syncConfigValues(@Nonnull ConfigChangedEvent.OnConfigChangedEvent event) {
         if (event.getModID().equals(GregicalityScience.MODID)) {
@@ -39,12 +37,16 @@ public class CommonProxy {
     public static void registerBlocks(@Nonnull RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
         registry.register(GCYSMetaBlocks.CRUCIBLE);
+
+        for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(pipe);
     }
 
     @SubscribeEvent
     public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
         registry.register(createItemBlock(GCYSMetaBlocks.CRUCIBLE, VariantItemBlock::new));
+
+        for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(createItemBlock(pipe, ItemBlockPressurePipe::new));
     }
 
     @Nonnull
@@ -61,5 +63,9 @@ public class CommonProxy {
         // anything here is safe to call removals in
         GCYSRecipeLoader.init();
         GCYSMaterialInfoLoader.init();
+    }
+
+    public void preLoad() {
+
     }
 }
