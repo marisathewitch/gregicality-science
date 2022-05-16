@@ -53,7 +53,25 @@ public class GCYSMaterials {
     public static Material CubicZirconia;
     public static Material MolybdenumTrioxide;
     public static Material LeadChloride;
+    public static Material SodiumTellurite;
+    public static Material TelluriumDioxide;
+    public static Material SeleniumDioxide;
+    public static Material SelenousAcid;
+    public static Material BoricAcid;
+    public static Material MetaboricAcid;
+    public static Material BoronTrioxide;
+    public static Material BoronTrifluoride;
+    public static Material LithiumTetrafluoroborate;
+    public static Material Diborane;
+    public static Material Borazine;
+    public static Material BoronTrichloride;
+    public static Material Trichloroborazine;
     public static Material HexagonalBoronNitride;
+    public static Material CubicBoronNitride;
+    public static Material AmorphousBoronNitride;
+    public static Material Heterodiamond;
+    public static Material CubicHeterodiamond;
+    public static Material LithiumHydride;
 
 
     // Second Degree Materials
@@ -121,6 +139,16 @@ public class GCYSMaterials {
     public static Material Nitroaniline;
     public static Material ParaPhenylenediamine;
     public static Material KaptonE;
+    public static Material Methylamine;
+    public static Material Trimethylamine;
+    public static Material Bistrichloromethylbenzene;
+    public static Material Tetrabromoethane;
+    public static Material TerephthalicAcid;
+    public static Material TerephthaloylChloride;
+    public static Material Butanediol;
+    public static Material GammaButyrolactone;
+    public static Material NMethylPyrrolidone;
+    public static Material Kevlar;
 
 
     // Unknown Composition Materials
@@ -139,6 +167,10 @@ public class GCYSMaterials {
     public static Material EvolutionaryMedium;
     public static Material RichNitrogenMixture;
     public static Material RichAmmoniaMixture;
+    public static Material Brine;
+    public static Material ChlorinatedBrine;
+    public static Material ChalcogenAnodeMud;
+    public static Material MethylamineMixture;
 
 
     /**

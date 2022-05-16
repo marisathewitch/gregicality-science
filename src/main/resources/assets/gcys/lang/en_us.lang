@@ -54,7 +54,25 @@ material.chlorosulfuric_acid=Chlorosulfuric Acid
 material.cubic_zirconia=Cubic Zirconia
 material.molybdenum_trioxide=Molybdenum Trioxide
 material.lead_chloride=Lead Chloride
+material.sodium_tellurite=Sodium Tellurite
+material.tellurium_dioxide=Tellurium Dioxide
+material.selenium_dioxide=Selenium Dioxide
+material.selenous_acid=Selenous Acid
+material.boric_acid=Boric Acid
+material.metaboric_acid=Metaboric Acid
+material.boron_trioxide=Boron Trioxide
+material.boron_trifluoride=Boron Trifluoride
+material.lithium_tetrafluoroborate=Lithium Tetrafluoroborate
+material.diborane=Diborane
+material.borazine=Borazine
+material.boron_trichloride=Boron Trichloride
+material.trichloroborazine=Trichloroborazine
 material.hexagonal_boron_nitride=Hexagonal Boron Nitride
+material.cubic_boron_nitride=Cubic Boron Nitride
+material.amorphous_boron_nitride=Amorphous Boron Nitride
+material.heterodiamond=Heterodiamond
+material.cubic_heterodiamond=Cubic Heterodiamond
+material.lithium_hydride=Lithium Hydride
 
 
 # Second Degree Materials
@@ -97,7 +115,6 @@ material.rhodium_salt_solution=Rhodium Salt Solution
 
 
 # Organic Chemistry Materials
-material.butyraldehyde=Butyraldehyde
 material.ethylhexanol=2-Ethylhexanol
 material.diethylhexyl_phosphoric_acid=Di-(2-ethylhexyl)phosphoric Acid
 material.butanol=Butanol
@@ -138,6 +155,16 @@ material.biphenyl_tetracarboxylic_acid_dianhydride=Biphenyl-Tetracarboxylic Acid
 material.nitroaniline=4-Nitroaniline
 material.para_phenylenediamine=Para-Phenylenediamine
 material.kapton_e=Kapton E
+material.methylamine=Methylamine
+material.trimethylamine=Trimethylamine
+material.bistrichloromethylbenzene=1,4-Bis(trichloromethyl) Benzene
+material.tetrabromoethane=Tetrabromoethane
+material.terephthalic_acid=Terephthalic Acid
+material.terephthaloyl_chloride=Terephthaloyl Chloride
+material.butanediol=Butanediol
+material.gamma_butyrolactone=Gamma-Butyrolactone
+material.n_methyl_pyrrolidone=N-Methyl-2-Pyrrolidone
+material.kevlar=Kevlar
 
 
 # Unknown Composition Materials
@@ -156,6 +183,14 @@ material.raw_evolutionary_medium=Raw Evolutionary Medium
 material.evolutionary_medium=Sterilized Evolutionary Medium
 material.rich_nitrogen_mixture=Rich Nitrogen Mixture
 material.rich_ammonia_mixture=Rich Ammonia Mixture
+material.brine=Brine
+material.chlorinated_brine=Chlorinated Brine
+material.chalcogen_anode_mud=Chalcogen Anode Mud
+item.chalcogen_anode_mud.dust=Chalcogen Anode Mud
+item.chalcogen_anode_mud.dustSmall=Small Pile of Chalcogen Anode Mud
+item.chalcogen_anode_mud.dustTiny=Tiny Pile of Chalcogen Anode Mud
+material.methylamine_mixture=Methylamine Mixture
+
 
 # Single Block Machines
 gcys.machine.steam_ejector.name=Steam Ejector
@@ -178,6 +213,9 @@ gcys.machine.roaster.name=Roaster
 # Nanoscale Fabricator
 gcys.machine.nanoscale_fabricator.name=Nanoscale Fabricator
 gcys.multiblock.nanoscale_fabricator.tooltip.1=Average Crucible heat cannot exceed the target by more than §c250K§7.
+
+# CVD Unit
+gcys.machine.cvd_unit.name=CVD Unit
 
 # Single Block Machines
 
@@ -204,6 +242,9 @@ tile.crucible.quartz.name=Quartz Crucible
 tile.crucible.tungsten.name=Tungsten Crucible
 tile.crucible.graphite.name=Graphite Crucible
 tile.crucible.boron_nitride.name=Boron Nitride Crucible
+
+tile.multiblock_casing.substrate.name=Substrate Casing
+tile.multiblock_casing.advanced_substrate.name=Advanced Substrate Casing
 
 
 # Vacuums
@@ -335,3 +376,11 @@ recipemap.catalytic_reformer_recipes.name=Catalytic Reformation
 recipemap.crystallization_recipes.name=Crystallization
 recipemap.roaster_recipes.name=Roasting
 recipemap.molecular_beam_recipes.name=Molecular Beam Epitaxy
+recipemap.cvd_recipes.name=Chemical Vapor Deposition
+recipemap.plasma_cvd_recipes.name=Plasma Enhanced CVD
+
+# Recipe Properties
+gcys.recipe.temperature=Temperature: %,dK
+gcys.recipe.pressure=Pressure: %sPa
+gcys.recipe.vacuum=Vacuum: %sPa
+

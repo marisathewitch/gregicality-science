@@ -29,6 +29,10 @@ import java.util.function.Function;
 @Mod.EventBusSubscriber(modid = GregicalityScience.MODID)
 public class CommonProxy {
 
+    public void preLoad() {
+        GameRegistry.registerTileEntity(TileEntityPressurePipe.class, new ResourceLocation(GregicalityScience.MODID, "pressure_pipe"));
+    }
+
     @SubscribeEvent
     public static void syncConfigValues(@Nonnull ConfigChangedEvent.OnConfigChangedEvent event) {
         if (event.getModID().equals(GregicalityScience.MODID)) {
@@ -40,6 +44,7 @@ public class CommonProxy {
     public static void registerBlocks(@Nonnull RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
         registry.register(GCYSMetaBlocks.CRUCIBLE);
+        registry.register(GCYSMetaBlocks.MULTIBLOCK_CASING);
 
         for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(pipe);
     }
@@ -48,6 +53,7 @@ public class CommonProxy {
     public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
         registry.register(createItemBlock(GCYSMetaBlocks.CRUCIBLE, VariantItemBlock::new));
+        registry.register(createItemBlock(GCYSMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));
 
         for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(createItemBlock(pipe, ItemBlockPressurePipe::new));
     }
@@ -66,9 +72,5 @@ public class CommonProxy {
         // anything here is safe to call removals in
         GCYSRecipeLoader.init();
         GCYSMaterialInfoLoader.init();
-    }
-
-    public void preLoad() {
-        GameRegistry.registerTileEntity(TileEntityPressurePipe.class, new ResourceLocation(GregicalityScience.MODID, "pressure_pipe"));
     }
 }
