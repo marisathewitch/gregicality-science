@@ -1,11 +1,19 @@
 package gregicality.science.common.block;
 
+import gregicality.science.client.render.pipe.AxlePipeRenderer;
+import gregicality.science.client.render.pipe.PressurePipeRenderer;
 import gregicality.science.common.block.blocks.BlockCrucible;
 import gregicality.science.common.block.blocks.BlockMultiblockCasing;
+import gregicality.science.common.pipelike.axle.AxlePipeType;
+import gregicality.science.common.pipelike.axle.BlockAxlePipe;
+import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
+import gregicality.science.common.pipelike.pressure.PressurePipeType;
+import gregtech.client.model.SimpleStateMapper;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.IStateMapper;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -19,6 +27,8 @@ import java.util.stream.Collectors;
 
 public class GCYSMetaBlocks {
 
+    public static final BlockPressurePipe[] PRESSURE_PIPES = new BlockPressurePipe[1];
+    public static final BlockAxlePipe[] AXLE_PIPES = new BlockAxlePipe[1];
     public static BlockCrucible CRUCIBLE;
     public static BlockMultiblockCasing MULTIBLOCK_CASING;
 
@@ -31,12 +41,31 @@ public class GCYSMetaBlocks {
         CRUCIBLE.setRegistryName("crucible");
         MULTIBLOCK_CASING = new BlockMultiblockCasing();
         MULTIBLOCK_CASING.setRegistryName("multiblock_casing");
+        for (PressurePipeType type : PressurePipeType.values()) {
+            PRESSURE_PIPES[type.ordinal()] = new BlockPressurePipe();
+            PRESSURE_PIPES[type.ordinal()].setRegistryName(String.format("pressure_pipe_%s", type.name));
+        }
+        for (AxlePipeType type : AxlePipeType.values()) {
+            AXLE_PIPES[type.ordinal()] = new BlockAxlePipe();
+            AXLE_PIPES[type.ordinal()].setRegistryName(String.format("axle_pipe_%s", type.name));
+        }
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
         registerItemModel(CRUCIBLE);
         registerItemModel(MULTIBLOCK_CASING);
+
+        IStateMapper normalStateMapper = new SimpleStateMapper(PressurePipeRenderer.INSTANCE.getModelLocation());
+        for (BlockPressurePipe pipe : PRESSURE_PIPES) {
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe), stack -> PressurePipeRenderer.INSTANCE.getModelLocation());
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
+        normalStateMapper = new SimpleStateMapper(AxlePipeRenderer.INSTANCE.getModelLocation());
+        for (BlockAxlePipe pipe : AXLE_PIPES) {
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe), stack -> AxlePipeRenderer.INSTANCE.getModelLocation());
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
     }
 
     @SideOnly(Side.CLIENT)
