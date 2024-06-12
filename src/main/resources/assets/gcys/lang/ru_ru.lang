@@ -484,7 +484,7 @@ material.ruthenium_chloride=Хлорид рутения (III)
 material.platinum_group_concentrate=Концентрат платиновой группы
 material.ammonium_perrhenate=Перренат аммония
 material.orichalcum=Орихалк
-material.vibranium=Вибраниум
+material.vibranium=Вибраний
 material.taranium=Тараний
 material.light_taranium_fuel=Легкое тараниевое топливо
 material.heavy_enriched_taranium_fuel=Тяжелое обогащенное тараниевое топливо
@@ -498,7 +498,7 @@ material.vibranium_unstable=Нестабильный вибраниум
 
 # Third Degree Materials
 material.zinc_rich_sphalerite=Богатый цинком сфалерит
-material.cracked_light_enriched_taranium=Легкий обогащенный тараний прошедший крекинг радоном
+material.cracked_light_enriched_taranium=Лёгкий обогащённый тараний прошедший крекинг радоном
 material.energetic_naquadria=Энергетическая наквадриа
 material.light_hyper_fuel=Легкое гипер топливо
 material.medium_hyper_fuel=Среднее гипер топливо
@@ -513,7 +513,7 @@ material.medium_taranium_fuel=Среднее тараниевое топливо
 material.medium_enriched_taranium_fuel=Среднее обогащенное тараниевое топливо
 material.deep_iron=Глубинное железо
 material.bedrock=Коренная порода
-material.cracked_heavy_enriched_taranium=Тяжелый обогащенный тараний прошедший крекинг радоном
+material.cracked_heavy_enriched_taranium=Тяжёлый обогащённый тараний прошедший крекинг радоном
 material.cracked_medium_enriched_taranium=Средний обогащенный тараний прошедший крекинг радоном
 
 # Burner Reactor
@@ -575,9 +575,9 @@ material.enriched_bedrock_soot_solution=Обогащенный раствор с
 material.clean_enriched_bedrock_solution=Обогащенный раствор сажи коренной породы
 material.stannic_chloride=Хлорид олова
 material.heavy_alkali_chloride_solution=Тяжелый раствор щелочного хлорида
-material.cracked_heavy_taranium=Тяжелый тараний прошедший крекинг фтором
+material.cracked_heavy_taranium=Тяжёлый тараний прошедший крекинг фтором
 material.cracked_medium_taranium=Средний тараний прошедший крекинг фтором
-material.cracked_light_taranium=Легкий тараний прошедший крекинг фтором
+material.cracked_light_taranium=Лёгкий тараний прошедший крекинг фтором
 
 
 # Organic Chemistry Materials
